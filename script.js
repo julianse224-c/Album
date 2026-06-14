@@ -33,12 +33,13 @@ import {
 //    (la obtienes en la consola de Firebase, ver INSTRUCCIONES.md)
 // =========================================================
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID",
+  apiKey: "AIzaSyAty8nzU5gax2MfltecqTeMrLWblmbD9Po",
+  authDomain: "album-3e86e.firebaseapp.com",
+  projectId: "album-3e86e",
+  storageBucket: "album-3e86e.firebasestorage.app",
+  messagingSenderId: "1062055401713",
+  appId: "1:1062055401713:web:9be7b36a70f9caa502f150",
+  measurementId: "G-15F0SHWVZY",
 };
 
 const app = initializeApp(firebaseConfig);
