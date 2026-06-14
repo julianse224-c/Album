@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestro Álbum</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fondo decorativo -->
+  <div class="paper-texture"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <p class="hero__eyebrow">un cuaderno digital para dos</p>
+    <h1 class="hero__title">Nuestro Álbum</h1>
+    <p class="hero__subtitle" id="counter">Cada foto, una página más de nuestra historia.</p>
+  </header>
+
+  <!-- ===== MOMENTOS ESPECIALES ===== -->
+  <section class="specials" id="specialsSection" hidden>
+    <h2 class="section-title">Momentos especiales <span class="pin">📌</span></h2>
+    <div class="specials__track" id="specialsTrack">
+      <!-- se llena dinámicamente -->
+    </div>
+  </section>
+
+  <!-- ===== FORMULARIO DE SUBIDA ===== -->
+  <section class="upload">
+    <h2 class="section-title">Escribir una nueva página</h2>
+    <form id="uploadForm" class="upload__form">
+
+      <label class="field field--file" for="photoInput">
+        <input type="file" id="photoInput" accept="image/*" capture="environment" required />
+        <span class="field__icon">📷</span>
+        <span class="field__label" id="fileLabel">Tocar para elegir o tomar una foto</span>
+        <img id="previewImg" class="preview-img" alt="" hidden />
+      </label>
+
+      <label class="field">
+        <span class="field__title">¿Qué pasó aquí?</span>
+        <textarea id="noteInput" placeholder="Escribe el recuerdo, una broma interna, lo que sea..." rows="3" required></textarea>
+      </label>
+
+      <div class="field-row">
+        <label class="field field--date">
+          <span class="field__title">Fecha</span>
+          <input type="date" id="dateInput" required />
+        </label>
+
+        <label class="field field--checkbox">
+          <input type="checkbox" id="specialInput" />
+          <span class="checkbox__box"></span>
+          <span class="field__title">Momento especial ✨</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span class="btn-submit__text">Guardar en el álbum</span>
+        <span class="btn-submit__spinner" hidden></span>
+      </button>
+
+      <p class="upload__status" id="uploadStatus"></p>
+    </form>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section class="gallery">
+    <h2 class="section-title">Nuestras páginas</h2>
+    <p class="gallery__empty" id="emptyMessage">Todavía no hay páginas... ¡sube la primera foto! 💌</p>
+    <div class="gallery__grid" id="galleryGrid">
+      <!-- se llena dinámicamente -->
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+    <div class="lightbox__content">
+      <img id="lightboxImg" src="" alt="" />
+      <p class="lightbox__date" id="lightboxDate"></p>
+      <p class="lightbox__note" id="lightboxNote"></p>
+      <button class="lightbox__delete" id="lightboxDelete">Eliminar página</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>hecho con amor, una foto a la vez 🤍</p>
+  </footer>
+
+  <!-- Firebase -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
